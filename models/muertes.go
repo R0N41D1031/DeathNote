@@ -2,9 +2,10 @@ package models
 
 import "gorm.io/gorm"
 
-type Muertes struct {
+type Muerte struct {
 	gorm.Model
 
-	Causa       string
-	Descripcion string
+	Causa       string `json:"causa"`
+	Descripcion string `json:"descripcion"`
+	VictimaID   uint   `json:"victima_id"`
 }

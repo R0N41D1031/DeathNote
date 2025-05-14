@@ -7,11 +7,11 @@ import (
 	"gorm.io/gorm"
 )
 
-var DSN = "host=localhost user=ronald password=1234 dbname=deathnote port=5432"
 var DB *gorm.DB
+var err error
 
 func DBconexion() {
-	var err error
+	DSN := "host=localhost user=ronald password=1234 dbname=deathnote port=5432"
 	DB, err = gorm.Open(postgres.Open(DSN), &gorm.Config{})
 	if err != nil {
 		log.Fatal(err)
